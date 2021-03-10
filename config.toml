@@ -9,7 +9,6 @@ googleAnalytics = "UA-46486821-1"
 paginate = 20
 canonifyurls = true
 
-#pygmentsstyle = "bw"
 pygmentsstyle = "fruity"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
@@ -17,7 +16,7 @@ pygmentscodefencesguesssyntax = true
 publishDir = "public"
 enableRobotsTXT = "true"
 
-#disqusShortname = "yourdiscussshortname"
+disqusShortname = "esamir"
 
 [params]
     author = "Samir Faci (csgeek)"
