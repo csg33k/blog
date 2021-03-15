@@ -83,7 +83,7 @@ disqusShortname = "esamir"
 [[menu.main]]
     name = "Blog"
     weight = 1
-    url  = "post/"
+    url  = "blog/"
 [[menu.main]]
     name = "About"
     weight = 2
