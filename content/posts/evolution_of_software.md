@@ -5,6 +5,8 @@ tags = ["software_development"]
 categories = ["blog"]
 authors = ["csgeek"]
 draft = true
+slug = "evolution-of-software-development" 
+
 +++
 ## Evolution of Software Development
 

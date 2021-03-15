@@ -1,20 +1,18 @@
 baseURL = "https://www.esamir.com/"
-languageCode = "en-us"
-title = "'csgeek' Blog"
+title = "csgeek Blog"
 theme = "hugo-coder"
+languageCode = "en-us"
 languagecode = "en"
 defaultcontentlanguage = "en"
 googleAnalytics = "UA-46486821-1"
+include_toc = true
 
 paginate = 20
 canonifyurls = true
 
-pygmentsstyle = "fruity"
+pygmentsstyle = "b2"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-
-publishDir = "public"
-enableRobotsTXT = "true"
 
 disqusShortname = "esamir"
 
@@ -28,23 +26,39 @@ disqusShortname = "esamir"
     favicon_32 = "/img/favicon-32x32.png"
     favicon_16 = "/img/favicon-16x16.png"
 
+    gravatar = "samir@esamir.com"
     footercontent = "Geeky musings, thoughts and other randomness"
-
-    hidecredits = false
-    hidecopyright = false
-
-    rtl = false
-    maxSeeAlsoItems = 5
-
-    enableTwemoji = true
 
     dateformat = "January 2, 2006"
 
-    colorscheme = "auto"
+    hideFooter = false
+    hideCredits = false
+    hideCopyright = false
+    since = 2019
 
+    # Git Commit in Footer, uncomment the line below to enable it.
+    commit = "https://github.com/luizdepra/hugo-coder/tree/"
 
-    math = true
-#    custom_css = ["css/custom.css"]
+    rtl = false
+
+    colorscheme = "dark"
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+    # Enable Twemoji
+    enableTwemoji = true
+
+    # Custom CSS
+    custom_css = []
+
+    # Custom JS
+    custom_js = []
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
 
 # Social links
 [[params.social]]
@@ -79,12 +93,18 @@ disqusShortname = "esamir"
     url = "https://www.linkedin.com/in/samirfaci/"
 
 
-# Menu links
-[[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "blog/"
-[[menu.main]]
-    name = "About"
-    weight = 2
-    url = "about/"
+[languages]
+    [languages.en]
+        languagename = "English"
+
+        [languages.en.menu]
+
+            [[languages.en.menu.main]]
+            name = "Blog"
+            weight = 1
+            url = "posts/"
+
+            [[languages.en.menu.main]]
+            name = "About"
+            weight = 2
+            url = "about/"
