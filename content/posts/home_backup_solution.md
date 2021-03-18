@@ -1,7 +1,7 @@
 +++ 
 date = "2021-03-07"
 title = "Home Backup Solution"
-tags = ["software_development"]
+tags = ["linux", "tutorial", "opensource", "cloud", "homeserver"]
 categories = ["blog"]
 authors = ["csgeek"]
 +++
