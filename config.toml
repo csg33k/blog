@@ -115,16 +115,18 @@ enableRobotsTXT = "true"
             weight = 2
             url = "about/"
 
-            [[languages.en.menu.main]]
-            name = "Search"
-            weight = 3
-            url = "search"
-            
-            [[languages.en.menu.main]]
+           [[languages.en.menu.main]]
             name = "Source"
-            weight = 9
+            weight = 3
             identifier = "GitHub"
             url = "https://github.com/safaci2000/blog"
+
+            [[languages.en.menu.main]]
+            name = "🔍"
+            weight = 4
+            url = "search"
+            
+ 
 
             [permalinks]
                posts = "/:06/:1/:2/:title/"
