@@ -5,7 +5,18 @@ tags = ["linux", "tutorial", "opensource", "cloud", "homeserver"]
 categories = ["blog"]
 authors = ["csgeek"]
 +++
-
+- [Home Backup Solution](#home-backup-solution)
+  - [Choosing Storage Solution](#choosing-storage-solution)
+  - [Backup Service](#backup-service)
+    - [Systemd Service](#systemd-service)
+- [BackUp Data](#backup-data)
+  - [Encryption](#encryption)
+  - [Destination](#destination)
+  - [Source](#source)
+  - [Schedule](#schedule)
+  - [Backup Retention](#backup-retention)
+- [Final Step, Backup Duplicati](#final-step-backup-duplicati)
+- [References/ Requirements](#references-requirements)
 ## Home Backup Solution
 
 I setup a NAS a while ago using Arch Linux and ZFS migrating away from Synology.  It's really nice to control your data and be able to use more advanced tooling then the limited set of applications that are available from Synology.

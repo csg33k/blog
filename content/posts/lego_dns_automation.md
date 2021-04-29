@@ -5,6 +5,16 @@ tags: ["docker", "ssl", "security", "automation", "ghost", "lego"]
 draft: false
 authors: ["csgeek"]
 ---
+- [Lego and LetsEncrypt](#lego-and-letsencrypt)
+  - [Dependencies/Tooling](#dependenciestooling)
+  - [SSL](#ssl)
+  - [Ghost Web Site](#ghost-web-site)
+    - [Systemd startup script](#systemd-startup-script)
+    - [Final Notes on ghost](#final-notes-on-ghost)
+  - [Nginx SSL Wrapping](#nginx-ssl-wrapping)
+    - [Backup Strategies](#backup-strategies)
+  - [Final Notes](#final-notes)
+  
 # Lego and LetsEncrypt
 
 if you haven't heard about letsencrypt you should.  If you're still serving all your traffic over HTTP you should stop and move over the HTTPS everything.  Honestly at this point there shouldn't be any reason not to use SSL.  The CPU/server cost is minimal and there is tooling that makes this trivial.  I'm going to walk you through the process of setting SSL using nginx and we'll use docker for good measure.

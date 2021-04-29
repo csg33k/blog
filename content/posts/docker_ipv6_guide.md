@@ -6,6 +6,14 @@ tags = ["docker", "linux", "opensource", "kubernetes"]
 categories = ["blog"]
 authors = ["csgeek"]
 +++
+- [IPV4](#ipv4)
+- [IPV6](#ipv6)
+    - [Step 1, enable in the Daemon](#step-1-enable-in-the-daemon)
+  - [Step 2, Firewall rules](#step-2-firewall-rules)
+  - [Step 3, Docker Compose + IPV6](#step-3-docker-compose--ipv6)
+  - [Step 4, Resolve NAT Issues](#step-4-resolve-nat-issues)
+- [Final thoughts.](#final-thoughts)
+- [Unconfirmed Fix](#unconfirmed-fix)
 
 I spent a good bit of time trying to figure this out, so I thought I'd record this for posterity's sake and others might benefit.
 
@@ -24,7 +32,6 @@ That being said, in production there are many MANY questions that need to be add
 
 Now, back to the problem at hand, networking.
 
-# Networking 
 
 ## IPV4
 
@@ -75,7 +82,7 @@ Bringing up different services and wiring them together is a breeze.  All the ip
 
 Now, IF you are operating in an IPV6 only world.  Let's see what this nightmare is about.
 
-### IPV6 Networking
+## IPV6
 
 #### Step 1, enable in the Daemon
 
@@ -94,7 +101,7 @@ Now, the official instructions say all you need to do is restart the service, bu
 
 At this point, the network for docker0 default network has been updated to use IPv6.  This does NOT mean that every docker network is IPv6 enabled.
 
-### Step 2. FIrewall rules
+### Step 2, Firewall rules
 
 For some reason this is not automatic and needs to be applied manually.
 
@@ -124,7 +131,7 @@ PING google.com (2607:f8b0:400a:808::200e): 56 data bytes
 round-trip min/avg/max = 17.119/17.240/17.430 ms
 ```
 
-### Docker Compose + IPV6
+### Step 3, Docker Compose + IPV6
 
 At this point docker has support for IPV6, but since docker-compose generally creates a new network for each docker-compose.yml definition it won't work as expected.
 
@@ -175,7 +182,7 @@ A few notes and warnings
 1. The network cannot clash with the existing docker0 network you gave the daemon.
 2. Version of the schema must not be higher than 2.1.  Docker-compose Binary can be the latest version, but the schema has to be 2.1.  You can read more info on the issue [here](https://github.com/docker/compose/issues/3988).
 
-### NAT Issues
+### Step 4, Resolve NAT Issues
 
 Okay, so the way IPV4 works is that all traffic is masked so that if  the host's IP is 10.5.5.23 (for example) and we have 5 different containers all with their own individual addresses, let's say 1.1.1.2-1.1.1.7 respectively.   Any traffic that goes out is [NAT](https://en.wikipedia.org/wiki/Network_address_translation)ed  and as far as the outside world and internet network is concerned the request came from 10.5.5.23. 
 
@@ -202,7 +209,7 @@ I ran across this github project called [docker-ipv6nat](https://github.com/robb
 Let's convert our busybox ping project to use this then I'll explain everything it does.  
 
 
-```
+```yml
 version: "2.1"
 services:
   busy:
@@ -245,8 +252,26 @@ From a dev perspective it's perfect.
 The alternative though is to make things work as desired from a networking perspective and create an administration hell which makes docker have to be treated as if it was bare metal.
 
 
-Final thoughts.
+## Final thoughts.
 
 For the love of god docker needs to update its IPV6 policy and the way their application supports IPV6.  This is so overly complicated for no reason.
 
 I would love to hear everyone's thoughts on this and if there are better ways of doing this, but for now for my own personal use I will use IPV6 NAT whenever and wherever i need IPV6 support.1G
+
+## Unconfirmed Fix
+
+[eLabFTW](https://dev.to/elabftw) shared this fix with me.  I haven't had the time to really confirm it, but I thought I'd share the fix for everyone else's benefit. 
+
+I haven't been able to get this to work on OS X and haven't tested this on Linux yet, but should be added in for reference.  It's definitely worth exploring before following the guide in this article
+
+---
+
+With docker 20.10.5 and docker-compose 1.28.6 you don't need to use the ip6tables commands manually and docker can take care of doing the NAT properly (which is MUCH better!).
+
+For that you need to have "experimental": true in /etc/docker/daemon.json, along with "ip6tables": true. Then restart docker service and check it has an ipv6 on docker0 bridge.
+
+I have found that for the network part in the docker-compose.yml file, you need to omit the "gateway" part (last line).
+
+After that, all should work nicely :D.
+
+Side note: if you're using HAProxy, use bind :::80 v4v6. Nothing needs to be changed for exposed ports, it'll listen on both.

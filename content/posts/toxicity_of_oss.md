@@ -12,7 +12,7 @@ My most recent experiences though really saddened me and exposed a certain toxic
 
 I've been posting on and off on dev.to but I never introduced myself so let me preface this post with a bit about me to give some context. 
 
-I've been using open source and Linux on and off since the early 2000s.  My first Linux distro was Caldera 2.4 an old RPM based that was cool in its hayday and then turned towards the dark side with various different lawsuits against Linux that never went anywhere.
+I've been using open source and Linux on and off since the early 2000s.  My first Linux distribution was Caldera 2.4 an old RPM based that was cool in its hay-day and then turned towards the dark side with various different lawsuits against Linux that never went anywhere.
 
 I've been involved in more Linux Users Groups, mailing lists and conferences then I can count.  I helped start a Linux conference that's been running for a good while after I graduated educating and teaching people about the benefits of Linux and Open Source.
 
@@ -23,7 +23,7 @@ I've always appreciated Open Source because it provides me as a user with (first
 
 We've built up a community that is all about the freedom of expression, freedom of choice, freedom to use code and software in anyway you desire with the appropriate permissive license.  So it's always sad when you hear and see people bashing other users because they don't agree with their choices.  Yes we have our mini flame wars of vim vs emacs vs nano.  Some people take it a bit too seriously but at the end of the day most respect other's people choice to use whatever they like and move on. (I would like to think at least)
 
-I volunteered to help with an Open Source conference and they rallied last minute to try and figure out what they could do this year since everyone is quarantined still.  They spent their time and researched the best tools they could find given the time, resources, and skillset available to them and ended up choosing Zoom.  I know, not my favorite tool either but at the end of the day, it's a well tested tool that works. They ran an entire 3 day event on zoom that had the founder of redhat, the fsf and so many more incredible speakers sharing their knowledge and expertise.  Yet, somehow all of that was eclipsed by the rants about the platform they chose.  
+I volunteered to help with an Open Source conference and they rallied last minute to try and figure out what they could do this year since everyone is quarantined still.  They spent their time and researched the best tools they could find given the time, resources, and skillset available to them and ended up choosing Zoom.  I know, not my favorite tool either but at the end of the day, it's a well tested tool that works. They ran an entire 3 day event on zoom that had the founder of redhat, the FSF and so many more incredible speakers sharing their knowledge and expertise.  Yet, somehow all of that was eclipsed by the rants about the platform they chose.  
 
 There were so many tweets and messages I ran across of that were complaining about the tooling.  Yes, we know that Zoom isn't open source, but if we're using zoom to show a video from key figures in OSS speaking about relevant topics that is important to them and zoom is allowing us to share that content with a wider audience.  Does it matter that much that it's closed source? If we value a user's ability to choose, shouldn't we actually let the people choose.  
 

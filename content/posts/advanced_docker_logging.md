@@ -7,7 +7,19 @@ categories = ["blog"]
 authors = ["csgeek"]
 +++ 
 # Docker Advanced Logging
-
+- [Docker Advanced Logging](#docker-advanced-logging)
+  - [File Pattern](#file-pattern)
+    - [Requirements:](#requirements)
+    - [Vector Configuration](#vector-configuration)
+    - [Docker Compose](#docker-compose)
+    - [ENV file](#env-file)
+  - [Docker Service Pattern](#docker-service-pattern)
+    - [Requirements](#requirements-1)
+    - [Vector Configuration](#vector-configuration-1)
+    - [Docker Compose](#docker-compose-1)
+    - [Env File](#env-file-1)
+    - [Retrieving GCP Logs:](#retrieving-gcp-logs)
+    - [Closing Notes](#closing-notes)
 
 In the past, I've tried to use GCP logging since it consolidates the logging into a central location.  There are a variety of different logging mechanisms you can use for docker, but for GCP you can read the guide on how to do it on [here](https://cloud.google.com/community/tutorials/docker-gcplogs-driver).  The only downside is that if you do enable it, then you will not be able to see any logs in the console which is big annoyance for me when inspecting things locally.
 

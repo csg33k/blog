@@ -6,6 +6,8 @@ categories: ["blog"]
 tags: ["development", "email"]
 authors: ["csgeek"]
 ---
+
+
 Whenever I've worked on any application that sends out emails it's always an issue on how to mimic the behavior on my local laptop.  Usually wherever the app is deployed is configured to be able to just 'work'.  aka you can send email by connecting to localhost with no auth.
 
 Now, how do I mimic locally? In the past i've tried setting up postfix etc in a docker stack, or more recently doing an smtp relay using google services.

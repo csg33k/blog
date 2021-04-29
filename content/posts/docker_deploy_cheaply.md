@@ -6,6 +6,13 @@ tags = ["docker"]
 categories = ["blog"]
 authors = ["csgeek"]
 +++
+- [SSL](#ssl)
+- [NGINX](#nginx)
+  - [NGINX vhost config.](#nginx-vhost-config)
+- [Docker application](#docker-application)
+  - [Docker Systemd script](#docker-systemd-script)
+- [Docker Check List.](#docker-check-list)
+- [Final stage](#final-stage)
 
 I have had several use cases where I want to deploy things in docker for multiple reasons, but ease of deployment is a big one.  Low entry bar, less maintenance that makes docker deployment more appealing.  I don't have the resources to do a full K8 deployment and ended up with this pattern I wanted to share with others
 
