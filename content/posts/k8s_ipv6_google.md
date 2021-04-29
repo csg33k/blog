@@ -4,6 +4,9 @@ date: 2021-04-29T10:04:58-07:00
 draft: false
 tags: ["docker", "linux", "opensource", "kubernetes"]
 ---
+
+![Banner](/images/k8s_ipv6_google/grid.jpeg)
+
 - [Assumptions](#assumptions)
 - [Implementation](#implementation)
   - [IPV6 Config](#ipv6-config)
